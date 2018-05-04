@@ -26,7 +26,8 @@ public class OpinionStatus : MonoBehaviour {
         this.PlayerCount = GlobalVars.PlayerCount;
         this.opinions = new float[PlayerCount];
 
-        Test();
+        // Uncomment this part to mess around with the system for testing
+        //Test();
 
 	}
 
