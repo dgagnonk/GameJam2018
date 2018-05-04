@@ -61,5 +61,6 @@ public class PersonSpawner : MonoBehaviour
     void spawnPerson(Vector3 position)
     {
         people.Add(Instantiate(personPrefab, position, Quaternion.identity, peopleParent));
+        people[people.Count - 1].GetComponent<Wander>().boundaries = boundaries;
     }
 }
