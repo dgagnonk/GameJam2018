@@ -12,31 +12,37 @@ using System.Linq;
 
 public class OpinionStatus : MonoBehaviour {
 
-	// THIS SHOULD BE CHANGED BY A GLOBAL VAR
-	public int PlayerCount = 4;
+	private int PlayerCount;
 
 	private float[] opinions;
 	public float[] Opinions { get { return opinions; }}
 
+    private Global GlobalVars;
+
 	void Start () {
-		
-		this.opinions = new float[PlayerCount];
+
+        GlobalVars = GameObject.Find("Global").GetComponent<Global>(); // Snag the global vars
+
+        this.PlayerCount = GlobalVars.PlayerCount;
+        this.opinions = new float[PlayerCount];
 
         Test();
 
 	}
 
     
-
+    // For testing purposes
 	void Test()
 	{
-        //for(int i = 0; i < PlayerCount; i++)
-        //	this.opinions[i] = 0.25f;
-
-        this.opinions[0] = 0.5f;
-        this.opinions[1] = 0.0f;
-        this.opinions[2] = 0.0f;
-        this.opinions[3] = 0.5f;
+        try
+        {
+            this.opinions[0] = 0.5f;
+            this.opinions[1] = 0.0f;
+            this.opinions[2] = 0.0f;
+            this.opinions[3] = 0.5f;
+        }
+        catch
+        { /* don't fuggin care */ }
 
 
         AddToOpinion(0, 0.1f);
@@ -48,7 +54,7 @@ public class OpinionStatus : MonoBehaviour {
         foreach (float f in this.opinions)
             sum += f;
 
-        Debug.Log(sum.ToString());
+        Debug.Log(sum.ToString()); // We always want all opinion percentages to add up to 1
     }
 	
 	// All opinions in the array add up to 1, since they are percentages
