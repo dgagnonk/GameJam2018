@@ -5,13 +5,13 @@ using UnityEditor;
 
 
 //Custom inspector for personSpawner
-[CustomEditor(typeof(PersonSpawner))]
+[CustomEditor(typeof(GameJam2018.PersonSpawner))]
 public class PersonSpawnerEditor : Editor
 {
     bool setupFoldout;
     public override void OnInspectorGUI()
     {
-        PersonSpawner personSpawnerTarget = (PersonSpawner) target;
+        GameJam2018.PersonSpawner personSpawnerTarget = (GameJam2018.PersonSpawner) target;
 
         personSpawnerTarget.randomSpawn = EditorGUILayout.Toggle("Random Spawn", personSpawnerTarget.randomSpawn);
 
