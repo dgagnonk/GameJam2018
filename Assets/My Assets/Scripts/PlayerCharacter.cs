@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace GameJam2018
@@ -29,6 +32,22 @@ namespace GameJam2018
 		CapsuleCollider m_Capsule;
 		bool m_Crouching;
 
+
+        private const double TALK_COOLDOWN_DURATION = 3;
+        private double _talkCooldown = 0;
+
+        public int playerIndex  = 0;
+
+        internal GameObject NearestPerson
+        {
+            get
+            {
+                List<GameObject> people = new List<GameObject>(GameObject.FindGameObjectsWithTag("Person"));
+                GameObject nearestPerson = people.OrderBy(x => Vector3.Distance(x.transform.position, this.gameObject.transform.position)).FirstOrDefault();
+                return nearestPerson;
+            }
+        }
+
     	void Start()
 		{
 			m_Animator = GetComponent<Animator>();
@@ -41,6 +60,26 @@ namespace GameJam2018
 			m_OrigGroundCheckDistance = m_GroundCheckDistance;
 		}
 
+        private void Update()
+        {
+            if(this._talkCooldown > 0)
+            {
+                this._talkCooldown -= Math.Min(Time.deltaTime, this._talkCooldown);
+            }
+        }
+
+        internal void Talk()
+        {
+            if(this._talkCooldown <= 0)
+            {
+                this._talkCooldown = TALK_COOLDOWN_DURATION;
+                GameObject target = this.NearestPerson;
+                var opinion = target.GetComponent<OpinionStatus>();
+                opinion.AddToOpinion(this.playerIndex, 1);
+                
+            }
+            
+        }
 
 		public void Move(Vector3 move, bool crouch, bool jump)
 		{

@@ -5,11 +5,11 @@ using UnityEngine;
 
 namespace GameJam2018
 {
-    public class Global : MonoBehaviour
+    public class Constants
     {
 
 
-        public int PlayerCount = 4;
+        public const int PlayerCount = 4;
 
 
     }
