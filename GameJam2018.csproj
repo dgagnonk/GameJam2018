@@ -301,8 +301,8 @@
   <ItemGroup>
     <Compile Include="Assets\My Assets\Scripts\Gamepad_Data.cs" />
     <Compile Include="Assets\My Assets\Scripts\PersonSpawner.cs" />
+    <Compile Include="Assets\My Assets\Scripts\PlayerCharacter.cs" />
     <Compile Include="Assets\My Assets\Scripts\SpawnBoundaries.cs" />
-    <Compile Include="Assets\My Assets\Scripts\ThirdPersonCharacter.cs" />
     <Compile Include="Assets\My Assets\Scripts\ThirdPersonUserControl.cs" />
     <Compile Include="Assets\My Assets\Scripts\Wander.cs" />
   </ItemGroup>
