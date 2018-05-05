@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4409321118388384}
   - component: {fileID: 54626765763839292}
   - component: {fileID: 114008960651868154}
-  - component: {fileID: 114147386282983000}
+  - component: {fileID: 114194574747749104}
   m_Layer: 0
   m_Name: Person
   m_TagString: Person
@@ -311,7 +311,7 @@ MonoBehaviour:
   debugCircle: {fileID: 1517270838091002}
   debugRandomPoint: {fileID: 1446537591579586}
   boundaries: {fileID: 0}
---- !u!114 &114147386282983000
+--- !u!114 &114194574747749104
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -319,9 +319,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1271249535656048}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bded31c11f8b8234b94ac70c3500535b, type: 3}
+  m_Script: {fileID: 11500000, guid: fd0e58b48cfb2ee43b271d0c33a12dcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Opinions: []
+  test: []
 --- !u!135 &135181610458281308
 SphereCollider:
   m_ObjectHideFlags: 1
