@@ -38,7 +38,7 @@ namespace GameJam2018
             // get the third person character ( this should never be null due to require component )
             m_Character = GetComponent<ThirdPersonCharacter>();
 
-            this.state = GamePad.GetState(this.playerIndex);
+            this.state = GamePad.GetState((PlayerIndex)this.playerIndex);
         }
 
 
@@ -60,7 +60,9 @@ namespace GameJam2018
             // read inputs
             float h = CrossPlatformInputManager.GetAxis("Horizontal");
             float v = CrossPlatformInputManager.GetAxis("Vertical");
-            bool crouch = Input.GetKey(KeyCode.C);
+
+            bool crouch = this.state.Buttons.X == ButtonState.Pressed;
+
 
             // calculate move direction to pass to character
             if (m_Cam != null)
