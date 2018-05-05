@@ -38,6 +38,14 @@ namespace GameJam2018
 
     public class OpinionStatus : MonoBehaviour
     {
+        private Color[] _opinionPalette = new Color[4]
+        {
+            Color.red,
+            Color.blue,
+            Color.yellow,
+            Color.magenta
+        };
+
 
         private int PlayerCount;
 
@@ -52,6 +60,11 @@ namespace GameJam2018
 
             this.PlayerCount = Constants.PlayerCount;
             this.Opinions = new Opinion[PlayerCount];
+
+            for(int i = 0; i < this.PlayerCount; i++)
+            {
+                this.Opinions[i] = new Opinion(1.0f / this.PlayerCount, this._opinionPalette[i]);
+            }
 
             // Uncomment this part to mess around with the system for testing
             //Test();
@@ -89,7 +102,7 @@ namespace GameJam2018
         // When you add more onto a specific opinion, an equal fraction of the added amount is removed from the other opinions
         // OpinionIndex : The index of the opinions array of which to add "ToAdd"
         public void AddToOpinion(int OpinionIndex, float ToAdd)
-        {
+        { 
             if (ToAdd > 1.0f - this.Opinions[OpinionIndex].Percent) ToAdd = 1.0f - this.Opinions[OpinionIndex].Percent;
             if (ToAdd <= 0.0f) return;
 
