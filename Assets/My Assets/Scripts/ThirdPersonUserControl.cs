@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityStandardAssets.CrossPlatformInput;
 using XInputDotNetPure;
 
 namespace GameJam2018
@@ -58,8 +57,9 @@ namespace GameJam2018
         private void FixedUpdate()
         {
             // read inputs
-            float h = CrossPlatformInputManager.GetAxis("Horizontal");
-            float v = CrossPlatformInputManager.GetAxis("Vertical");
+            
+            float h = this.state.ThumbSticks.Left.X;
+            float v = this.state.ThumbSticks.Left.Y;
 
             bool crouch = this.state.Buttons.X == ButtonState.Pressed;
 

@@ -294,10 +294,16 @@
     <Reference Include="Unity.PackageManagerUI.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="XInputDotNetPure">
+      <HintPath>Assets\My Assets\XInputDotNet\Plugins\XInputDotNetPure.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\My Assets\Scripts\Gamepad_Data.cs" />
     <Compile Include="Assets\My Assets\Scripts\PersonSpawner.cs" />
     <Compile Include="Assets\My Assets\Scripts\SpawnBoundaries.cs" />
+    <Compile Include="Assets\My Assets\Scripts\ThirdPersonCharacter.cs" />
+    <Compile Include="Assets\My Assets\Scripts\ThirdPersonUserControl.cs" />
     <Compile Include="Assets\My Assets\Scripts\Wander.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -314,6 +320,7 @@
     <None Include="C:\Users\100592125\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.8\Tests\Editor\Unity.PackageManagerUI.EditorTests.asmdef" />
     <None Include="C:\Users\100592125\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.standardevents@1.0.13\Editor\Editor.asmdef" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
 </Project>
