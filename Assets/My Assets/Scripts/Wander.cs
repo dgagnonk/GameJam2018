@@ -18,6 +18,7 @@ namespace GameJam2018
 
         public GameObject debugCircle;
         public GameObject debugRandomPoint;
+        public SpawnBoundaries boundaries;
 
         //Private variables
         private Rigidbody rb;
@@ -64,8 +65,24 @@ namespace GameJam2018
 
             rb.velocity = Vector3.Lerp(rb.velocity, goalVelocity, wanderSmoothingPower);
 
-            //rotate the agent so it's facing the velocity it's moving
-            gameObject.transform.forward = rb.velocity.normalized;
+
+            //ensure that the agent is within the boundaries
+            if(gameObject.transform.position.x > boundaries.xMax)
+            {
+                gameObject.transform.position = new Vector3(boundaries.xMax, gameObject.transform.position.y, gameObject.transform.position.z);
+            }
+            if (gameObject.transform.position.x < boundaries.xMin)
+            {
+                gameObject.transform.position = new Vector3(boundaries.xMin, gameObject.transform.position.y,gameObject.transform.position.z);
+            }
+            if (gameObject.transform.position.z < boundaries.zMin)
+            {
+                gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, boundaries.zMin);
+            }
+            if (gameObject.transform.position.z > boundaries.zMax)
+            {
+                gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, boundaries.zMax);
+            }
 
 
             //if enabled, draw debug shapes
