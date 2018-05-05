@@ -27,7 +27,7 @@ namespace GameJam2018
 	    // Use this for initialization
 	    void Start ()
         {
-
+            
             people = PersonSpawner.people;
             PlayerCount = Constants.PlayerCount;
 
