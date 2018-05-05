@@ -39,7 +39,8 @@ GameObject:
   - component: {fileID: 54626765763839292}
   - component: {fileID: 195951095882419744}
   - component: {fileID: 114936348866267604}
-  - component: {fileID: 114194574747749104}
+  - component: {fileID: 114543743538956950}
+  - component: {fileID: 114364617844640662}
   m_Layer: 0
   m_Name: Person
   m_TagString: Person
@@ -613,9 +614,9 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114194574747749104
+--- !u!114 &114364617844640662
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1271249535656048}
@@ -626,8 +627,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Opinions: []
   test: []
-  minTargetChangeTime: 2
-  maxTargetChangeTime: 6
+--- !u!114 &114543743538956950
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1271249535656048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538f99c1e040f9548994267b47bb904b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HowManyPersonTypes: 4
+  PersonType: 0
 --- !u!114 &114936348866267604
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -639,15 +651,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20a017c56924f344eb6dcb663bb2fba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 1
-  circleDistance: 1.5
-  circleRadius: 1
-  wanderDelta: 0.12
-  wanderSmoothingPower: 0.1
-  drawDebugShapes: 0
-  debugCircle: {fileID: 1517270838091002}
-  debugRandomPoint: {fileID: 1446537591579586}
-  boundaries: {fileID: 0}
+  minTargetChangeTime: 5
+  maxTargetChangeTime: 10
 --- !u!135 &135181610458281308
 SphereCollider:
   m_ObjectHideFlags: 1

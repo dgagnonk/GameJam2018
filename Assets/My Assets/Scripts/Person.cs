@@ -11,7 +11,7 @@ public class Person : MonoBehaviour {
      */
 
     public int HowManyPersonTypes = 4;
-    private int PersonType;
+    public int PersonType;
 
 	void Start ()
     {
