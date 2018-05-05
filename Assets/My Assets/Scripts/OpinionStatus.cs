@@ -53,8 +53,6 @@ namespace GameJam2018
         [Tooltip("Reminder that all opinion percentages should add up to 1.")]
         public Opinion[] Opinions;
 
-        public List<Opinion> test = new List<Opinion>();
-
         void Start()
         {
 
@@ -71,32 +69,14 @@ namespace GameJam2018
 
         }
 
+        #region For Testing (Inconsequential)
 
-        // For testing purposes
         void Test()
         {
-            try
-            {
-                this.Opinions[0] = new Opinion(0.5f, Color.red);
-                this.Opinions[1] = new Opinion(0.0f, Color.white);
-                this.Opinions[2] = new Opinion(0.0f, Color.black);
-                this.Opinions[3] = new Opinion(0.5f, Color.yellow);
-            }
-            catch
-            { /* don't fuggin care */ }
-
-
-            AddToOpinion(0, 0.1f);
-
-            foreach (Opinion o in this.Opinions)
-                Debug.Log(o.Percent.ToString());
-
-            float sum = 0.0f;
-            foreach (Opinion o in this.Opinions)
-                sum += o.Percent;
-
-            Debug.Log(sum.ToString()); // We always want all opinion percentages to add up to 1
+            AddToOpinion(0, 0.25f);
         }
+
+        #endregion
 
         // All opinions in the array add up to 1, since they are percentages
         // When you add more onto a specific opinion, an equal fraction of the added amount is removed from the other opinions
