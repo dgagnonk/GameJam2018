@@ -867,6 +867,11 @@ MonoBehaviour:
     type: 2}
   Ground: {fileID: 1875017619}
   Grid: []
+  Materials:
+  - {fileID: 2100000, guid: 930cde84b81931543acd07fb54cdce0a, type: 2}
+  - {fileID: 2100000, guid: 52976f4086c6d9c478f3ca45e3bf98b7, type: 2}
+  - {fileID: 2100000, guid: 545db83c4d7f6544cbb9417d07a89179, type: 2}
+  - {fileID: 2100000, guid: e1934a7ddfdb3984191af41fac4a7241, type: 2}
   RegionSize: 2.5
   Dimension: 4
 --- !u!4 &1682756566
