@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Person
   - Shout Collider
+  - Obstacle
   layers:
   - Default
   - TransparentFX
