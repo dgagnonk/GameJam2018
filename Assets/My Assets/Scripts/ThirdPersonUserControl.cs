@@ -73,6 +73,11 @@ namespace GameJam2018
                 m_Character.Talk();
             }
 
+            if(this.state.Buttons.Y == ButtonState.Pressed)
+            {
+                m_Character.Shout();
+            }
+
 
             // calculate move direction to pass to character
             if (m_Cam != null)

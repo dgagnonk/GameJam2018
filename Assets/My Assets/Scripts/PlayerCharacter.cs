@@ -36,6 +36,12 @@ namespace GameJam2018
         private const double TALK_COOLDOWN_DURATION = 3;
         private double _talkCooldown = 0;
 
+        private const double SHOUT_DURATION = 0.5;
+        private double _shoutActive = 0;
+
+        private const double SHOUT_COOLDOWN_DURATION = 5;
+        private double _shoutCooldown = 0;
+
         public int playerIndex  = 0;
 
         internal GameObject NearestPerson
@@ -66,6 +72,21 @@ namespace GameJam2018
             {
                 this._talkCooldown -= Math.Min(Time.deltaTime, this._talkCooldown);
             }
+
+            if(this._shoutCooldown > 0)
+            {
+                this._shoutCooldown -= Math.Min(Time.deltaTime, this._shoutCooldown);
+            }
+
+            if(this._shoutActive > 0)
+            {
+                this._shoutActive -= Math.Min(Time.deltaTime, this._shoutActive);
+                if(this._shoutActive <= 0)
+                {
+                    this.gameObject.GetComponentInChildren<ShoutController>().EndShout();
+                }
+                this._shoutCooldown = SHOUT_COOLDOWN_DURATION;
+            }
         }
 
         internal void Talk()
@@ -76,9 +97,16 @@ namespace GameJam2018
                 GameObject target = this.NearestPerson;
                 var opinion = target.GetComponent<OpinionStatus>();
                 opinion.AddToOpinion(this.playerIndex, 1);
-                
             }
-            
+        }
+
+        internal void Shout()
+        {
+            if(this._shoutCooldown <= 0)
+            {
+                this._shoutActive = SHOUT_DURATION;
+                this.gameObject.GetComponentInChildren<ShoutController>().StartShout();
+            }
         }
 
 		public void Move(Vector3 move, bool crouch, bool jump)
