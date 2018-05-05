@@ -14,13 +14,14 @@ using System.Linq;
 namespace GameJam2018
 {
 
+    [System.Serializable]
     public class Opinion
     {
-        public float Percent { get; set; }
-        public Color Colour { get; set; }
+        public float Percent;
+        public Color Colour;
 
-        // This constructor will generate a random colour
-        // Probably only best to use this for testing since we can't detect when a colour has been used for another follower
+        //This constructor will generate a random colour
+        //Probably only best to use this for testing since we can't detect when a colour has been used for another follower
         public Opinion(float Percent)
         {
             this.Percent = Percent;
@@ -40,10 +41,13 @@ namespace GameJam2018
 
         private int PlayerCount;
 
-        private Opinion[] opinions;
-        public Opinion[] Opinions { get { return opinions; } }
+        [Header("Opinions")]
+        [Tooltip("Reminder that all opinion percentages should add up to 1.")]
+        public Opinion[] Opinions;
 
         private Global GlobalVars;
+
+        public List<Opinion> test = new List<Opinion>();
 
         void Start()
         {
@@ -51,7 +55,7 @@ namespace GameJam2018
             GlobalVars = GameObject.Find("Global").GetComponent<Global>(); // Snag the global vars
 
             this.PlayerCount = GlobalVars.PlayerCount;
-            this.opinions = new Opinion[PlayerCount];
+            this.Opinions = new Opinion[PlayerCount];
 
             // Uncomment this part to mess around with the system for testing
             //Test();
@@ -64,10 +68,10 @@ namespace GameJam2018
         {
             try
             {
-                this.opinions[0] = new Opinion(0.5f, Color.red);
-                this.opinions[1] = new Opinion(0.0f, Color.white);
-                this.opinions[2] = new Opinion(0.0f, Color.black);
-                this.opinions[3] = new Opinion(0.5f, Color.yellow);
+                this.Opinions[0] = new Opinion(0.5f, Color.red);
+                this.Opinions[1] = new Opinion(0.0f, Color.white);
+                this.Opinions[2] = new Opinion(0.0f, Color.black);
+                this.Opinions[3] = new Opinion(0.5f, Color.yellow);
             }
             catch
             { /* don't fuggin care */ }
@@ -75,11 +79,11 @@ namespace GameJam2018
 
             AddToOpinion(0, 0.1f);
 
-            foreach (Opinion o in this.opinions)
+            foreach (Opinion o in this.Opinions)
                 Debug.Log(o.Percent.ToString());
 
             float sum = 0.0f;
-            foreach (Opinion o in this.opinions)
+            foreach (Opinion o in this.Opinions)
                 sum += o.Percent;
 
             Debug.Log(sum.ToString()); // We always want all opinion percentages to add up to 1
@@ -95,15 +99,15 @@ namespace GameJam2018
 
             Opinions[OpinionIndex].Percent += ToAdd;
 
-            var ZeroOpinions = (from op in this.opinions where op.Percent == 0.0f select op).ToArray(); // Get zero opinions and "skip" so we don't get negatives
+            var ZeroOpinions = (from op in this.Opinions where op.Percent == 0.0f select op).ToArray(); // Get zero opinions and "skip" so we don't get negatives
             float ToRemove = ToAdd / (PlayerCount - ZeroOpinions.Length - 1);
 
             for (int i = 0; i < PlayerCount; i++)
             {
                 if (i == OpinionIndex) continue;
-                if (this.opinions[i].Percent == 0.0f) continue;
+                if (this.Opinions[i].Percent == 0.0f) continue;
 
-                this.opinions[i].Percent -= ToRemove;
+                this.Opinions[i].Percent -= ToRemove;
             }
         }
 
