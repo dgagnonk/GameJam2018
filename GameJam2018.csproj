@@ -302,7 +302,9 @@
   <ItemGroup>
     <Compile Include="Assets\My Assets\Scripts\Gamepad_Data.cs" />
     <Compile Include="Assets\My Assets\Scripts\Global.cs" />
+    <Compile Include="Assets\My Assets\Scripts\NPCNavmeshAgent.cs" />
     <Compile Include="Assets\My Assets\Scripts\OpinionStatus.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Person.cs" />
     <Compile Include="Assets\My Assets\Scripts\PersonSpawner.cs" />
     <Compile Include="Assets\My Assets\Scripts\PlayerCharacter.cs" />
     <Compile Include="Assets\My Assets\Scripts\ShoutController.cs" />
