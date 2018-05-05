@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace GameJam2018
 {
-    public class Constants
+    public class Constants : MonoBehaviour
     {
 
 
