@@ -4,13 +4,9 @@ using XInputDotNetPure;
 
 namespace GameJam2018
 {
-    [RequireComponent(typeof (PlayerCharacter))]
+    [RequireComponent(typeof(PlayerCharacter))]
     public class ThirdPersonUserControl : MonoBehaviour
     {
-        public int playerIndex = 0;
-
-
-
         private PlayerCharacter m_Character; // A reference to the ThirdPersonCharacter on the object
         private Transform m_Cam;                  // A reference to the main camera in the scenes transform
         private Vector3 m_CamForward;             // The current forward direction of the camera
@@ -18,6 +14,15 @@ namespace GameJam2018
         private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
         private GamePadState state;
         private GamePadState prevState;
+
+        private PlayerIndex Index
+        {
+            get
+            {
+                return (PlayerIndex)this.gameObject.GetComponent<PlayerCharacter>().playerIndex;
+            }
+        }
+
         
         private void Start()
         {
@@ -37,14 +42,14 @@ namespace GameJam2018
             // get the third person character ( this should never be null due to require component )
             m_Character = GetComponent<PlayerCharacter>();
 
-            this.state = GamePad.GetState((PlayerIndex)this.playerIndex);
+            this.state = GamePad.GetState(this.Index);
         }
 
 
         private void Update()
         {
             this.prevState = this.state;
-            this.state = GamePad.GetState((PlayerIndex)this.playerIndex);
+            this.state = GamePad.GetState(this.Index);
             if (!m_Jump)
             {
                 //m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
@@ -61,7 +66,12 @@ namespace GameJam2018
             float h = this.state.ThumbSticks.Left.X;
             float v = this.state.ThumbSticks.Left.Y;
 
-            bool crouch = this.state.Buttons.X == ButtonState.Pressed;
+            bool crouch = false;
+
+            if(this.state.Buttons.X == ButtonState.Pressed)
+            {
+                m_Character.Talk();
+            }
 
 
             // calculate move direction to pass to character

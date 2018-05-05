@@ -18,17 +18,12 @@ namespace GameJam2018
 
         private int PlayerCount;
 
-        private float[] opinions;
+        public float[] opinions;
         public float[] Opinions { get { return opinions; } }
-
-        private Global GlobalVars;
 
         void Start()
         {
-
-            GlobalVars = GameObject.Find("Global").GetComponent<Global>(); // Snag the global vars
-
-            this.PlayerCount = GlobalVars.PlayerCount;
+            this.PlayerCount = Constants.PlayerCount;
             this.opinions = new float[PlayerCount];
 
             // Uncomment this part to mess around with the system for testing
@@ -68,7 +63,7 @@ namespace GameJam2018
         // OpinionIndex : The index of the opinions array of which to add "ToAdd"
         public void AddToOpinion(int OpinionIndex, float ToAdd)
         {
-            if (ToAdd > 1.0f) ToAdd = 1.0f;
+            if (ToAdd > 1.0f - this.opinions[OpinionIndex]) ToAdd = 1.0f - this.opinions[OpinionIndex];
             if (ToAdd <= 0.0f) return;
 
             Opinions[OpinionIndex] += ToAdd;
