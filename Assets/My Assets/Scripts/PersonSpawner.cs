@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GameJam2018;
 
-namespace GameJam2018
+namespace GameJam2018Editor
 {
 
     public class PersonSpawner : MonoBehaviour
@@ -62,7 +63,6 @@ namespace GameJam2018
         void spawnPerson(Vector3 position)
         {
             people.Add(Instantiate(personPrefab, position, Quaternion.identity, peopleParent));
-            people[people.Count - 1].GetComponent<Wander>().boundaries = boundaries;
         }
     }
 

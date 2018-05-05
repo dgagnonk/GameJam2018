@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Pink
+  m_Name: NPC
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -81,6 +81,12 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 0, b: 0.84827566, a: 1}
+    - Vector3_9098C0CC: {r: 0, g: 0, b: 1, a: 0}
+    - Vector3_C57B2C79: {r: 0, g: 0, b: 0, a: 0}
+    - Vector3_DC0F1C23: {r: 0, g: 1, b: 0, a: 0}
+    - Vector3_E7CBAAC6: {r: 1, g: 0, b: 0, a: 0}
+    - Vector3_FB8D83B6: {r: 1, g: 1, b: 0, a: 0}
+    - Vector4_86E0B76C: {r: 1, g: 0, b: 0, a: 0}
+    - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}

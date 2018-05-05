@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using GameJam2018;
 
-
-namespace GameJam2018
-{
+namespace GameJam2018Editor
+{ 
 
     //Custom inspector for personSpawner
     [CustomEditor(typeof(PersonSpawner))]
     public class PersonSpawnerEditor : Editor
     {
         bool setupFoldout;
+
         public override void OnInspectorGUI()
         {
             PersonSpawner personSpawnerTarget = (PersonSpawner)target;
