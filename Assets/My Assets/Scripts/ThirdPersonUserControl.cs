@@ -4,14 +4,14 @@ using XInputDotNetPure;
 
 namespace GameJam2018
 {
-    [RequireComponent(typeof (ThirdPersonCharacter))]
+    [RequireComponent(typeof (PlayerCharacter))]
     public class ThirdPersonUserControl : MonoBehaviour
     {
         public int playerIndex = 0;
 
 
 
-        private ThirdPersonCharacter m_Character; // A reference to the ThirdPersonCharacter on the object
+        private PlayerCharacter m_Character; // A reference to the ThirdPersonCharacter on the object
         private Transform m_Cam;                  // A reference to the main camera in the scenes transform
         private Vector3 m_CamForward;             // The current forward direction of the camera
         private Vector3 m_Move;
@@ -35,7 +35,7 @@ namespace GameJam2018
             }
 
             // get the third person character ( this should never be null due to require component )
-            m_Character = GetComponent<ThirdPersonCharacter>();
+            m_Character = GetComponent<PlayerCharacter>();
 
             this.state = GamePad.GetState((PlayerIndex)this.playerIndex);
         }
