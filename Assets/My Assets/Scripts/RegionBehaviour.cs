@@ -40,7 +40,7 @@ namespace GameJam2018
             foreach (GameObject gameObj in PeopleInRegion)
             {
                 OpinionStatus opStat = gameObj.GetComponent<OpinionStatus>();
-                for (int i = 0; i < Constants.PlayerCount; i++)
+                for (int i = 0; i < opStat.Opinions.Length; i++)
                 {
                     opTotals[i] += opStat.Opinions[i].Percent;
                     //grandTotal += opTotals[i];

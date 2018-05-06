@@ -320,6 +320,7 @@
     <Compile Include="Assets\My Assets\Scripts\PlayerCharacter.cs" />
     <Compile Include="Assets\My Assets\Scripts\RegionBehaviour.cs" />
     <Compile Include="Assets\My Assets\Scripts\RegionSpawner.cs" />
+    <Compile Include="Assets\My Assets\Scripts\ScoreMonitor.cs" />
     <Compile Include="Assets\My Assets\Scripts\ShoutController.cs" />
     <Compile Include="Assets\My Assets\Scripts\SpawnBoundaries.cs" />
     <Compile Include="Assets\My Assets\Scripts\ThirdPersonUserControl.cs" />
