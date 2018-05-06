@@ -288,11 +288,11 @@
     <Reference Include="Boo.Lang">
       <HintPath>Library\UnityAssemblies\Boo.Lang.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>Library\ScriptAssemblies\UnityEditor.StandardEvents.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.PackageManagerUI.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.StandardEvents">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="XInputDotNetPure">
       <HintPath>Assets\My Assets\XInputDotNet\Plugins\XInputDotNetPure.dll</HintPath>
@@ -319,7 +319,6 @@
     <Compile Include="Assets\My Assets\Scripts\PersonSpawner.cs" />
     <Compile Include="Assets\My Assets\Scripts\PlayerCharacter.cs" />
     <Compile Include="Assets\My Assets\Scripts\RegionBehaviour.cs" />
-    <Compile Include="Assets\My Assets\Scripts\RegionMonitor.cs" />
     <Compile Include="Assets\My Assets\Scripts\RegionSpawner.cs" />
     <Compile Include="Assets\My Assets\Scripts\ShoutController.cs" />
     <Compile Include="Assets\My Assets\Scripts\SpawnBoundaries.cs" />
