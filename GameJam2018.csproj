@@ -288,30 +288,33 @@
     <Reference Include="Boo.Lang">
       <HintPath>Library\UnityAssemblies\Boo.Lang.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.PackageManagerUI.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>Library\ScriptAssemblies\UnityEditor.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.PackageManagerUI.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="XInputDotNetPure">
       <HintPath>Assets\My Assets\XInputDotNet\Plugins\XInputDotNetPure.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\My Assets\Scripts\Constants.cs" />
     <ProjectReference Include="GameJam2018.Plugins.csproj">
       <Project>{5777963E-2CF3-D3E6-DEB9-BDAD3A5C2C46}</Project>
       <Name>GameJam2018.Plugins</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\My Assets\Prefabs\PersonAnimation.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Constants.cs" />
     <Compile Include="Assets\My Assets\Scripts\Gamepad_Data.cs" />
     <Compile Include="Assets\My Assets\Scripts\NPCNavmeshAgent.cs" />
     <Compile Include="Assets\My Assets\Scripts\OpinionStatus.cs" />
     <Compile Include="Assets\My Assets\Scripts\Person.cs" />
     <Compile Include="Assets\My Assets\Scripts\PersonSpawner.cs" />
+    <Compile Include="Assets\My Assets\Scripts\PersonSpawner_Editor.cs" />
     <Compile Include="Assets\My Assets\Scripts\PlayerCharacter.cs" />
+    <Compile Include="Assets\My Assets\Scripts\RegionMonitor.cs" />
     <Compile Include="Assets\My Assets\Scripts\ShoutController.cs" />
     <Compile Include="Assets\My Assets\Scripts\SpawnBoundaries.cs" />
     <Compile Include="Assets\My Assets\Scripts\ThirdPersonUserControl.cs" />
