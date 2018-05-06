@@ -313,7 +313,7 @@ GameObject:
   - component: {fileID: 214783054}
   - component: {fileID: 214783053}
   m_Layer: 5
-  m_Name: Brain (3)
+  m_Name: Brain (Pink)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -967,7 +967,7 @@ GameObject:
   - component: {fileID: 951324182}
   - component: {fileID: 951324181}
   m_Layer: 5
-  m_Name: Brain
+  m_Name: Brain (Yellow)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1120,7 +1120,7 @@ GameObject:
   - component: {fileID: 984034837}
   - component: {fileID: 984034836}
   m_Layer: 5
-  m_Name: Brain (2)
+  m_Name: Brain (Blue)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1840,7 +1840,7 @@ GameObject:
   - component: {fileID: 1861970540}
   - component: {fileID: 1861970539}
   m_Layer: 5
-  m_Name: Brain (1)
+  m_Name: Brain (Red)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
