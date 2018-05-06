@@ -46,7 +46,7 @@ namespace GameJam2018
             if (!target.tag.Equals("Person")) { return; }
 
             var targetOpinion = target.GetComponent<OpinionStatus>();
-            targetOpinion.AddToOpinion(this._playerCharacter.playerIndex, 0.2f);
+            targetOpinion.AddToOpinion(this._playerCharacter.playerIndex, 0.1f);
         }
     }
 }

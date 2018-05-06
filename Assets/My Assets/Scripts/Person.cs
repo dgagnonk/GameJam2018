@@ -38,9 +38,7 @@ namespace GameJam2018
         void Start()
         {
             PersonType = (int)UnityEngine.Random.Range(1, HowManyPersonTypes + 1); // +1 here because max is exclusive
-            this._animator = this.GetComponentInChildren<Animator>();
-
-            
+            this._animator = this.GetComponentInChildren<Animator>();     
         }
 
         private void Update()

@@ -105,6 +105,20 @@ namespace GameJam2018
             }
         }
 
+        public Opinion GetHighestOpinion()
+        {
+            List<Opinion> sortedOpinions = this.Opinions.OrderByDescending(x => x.Percent).ToList();
+
+            if(sortedOpinions.Count > 1 && sortedOpinions[0].Percent == sortedOpinions[1].Percent)
+            {
+                return null;
+            }
+            else
+            {
+                return sortedOpinions.First();
+            }
+        }
+
         //a "dominant" opinion is one that has more than 50% of control 
         //returns -1 if there isn't a dominant opinion, 0-3 for the dominant opinion (index of the opinion)
         public int getDominantOpinion()
