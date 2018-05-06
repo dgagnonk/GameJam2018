@@ -189,6 +189,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4601115642473650}
+  - component: {fileID: 65902034271639346}
   m_Layer: 0
   m_Name: LightFence_Section_B
   m_TagString: Untagged
@@ -2267,5 +2268,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.071867, y: 1.3003516, z: 0.31861025}
   m_Center: {x: -1.5834036, y: 0.5211785, z: -0.009275705}
-=======
->>>>>>> master
