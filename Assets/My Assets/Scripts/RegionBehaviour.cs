@@ -15,6 +15,8 @@ namespace GameJam2018
 
         public int ID;
 
+        private ICapturable _capturable;
+
         // Use this for initialization
         void Start()
         {
@@ -51,6 +53,10 @@ namespace GameJam2018
                 if ((opTotals[i] / PeopleInRegion.Count) >= DominantMindshareAtPercent)
                 {             
                     KingOfRegion = i;
+                    if(this._capturable != null)
+                    {
+                        this._capturable.SetOwner(i);
+                    }          
                     this.gameObject.GetComponent<MeshRenderer>().material = regionSpawner.Materials[i];
                     break;
                 }
@@ -71,6 +77,14 @@ namespace GameJam2018
             {
                 PeopleInRegion.Remove(other.gameObject);
             }
+        }
+
+        public void AssignCapturable(GameObject capturable)
+        {
+            if(capturable == null) { this._capturable = null; }
+
+            GameObject capturableObject = GameObject.Instantiate(capturable, this.transform, false);
+            this._capturable = capturableObject.GetComponent<ICapturable>();
         }
     }
 }

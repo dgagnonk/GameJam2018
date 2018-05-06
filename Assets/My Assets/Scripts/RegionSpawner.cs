@@ -12,6 +12,13 @@ namespace GameJam2018
         public List<GameObject> Grid;
         public List<Material> Materials;
 
+        public List<GameObject> CapturablePrefabs;
+        private Dictionary<string, double> _capturableProbabilities = new Dictionary<string, double>()
+        {
+            { "None", 0.75 },
+            { "Billboard", 0.25 }
+        };
+
         public float RegionSize; // Keep in mind Ground is 10x10, so RegionSize should be 10 / 4 = 2.5 for a 4x4 grid
         public int Dimension = 4;
 
@@ -44,6 +51,35 @@ namespace GameJam2018
                     cellX.transform.position = spawnpt;
 
                     spawnpt.x += (RegionSize * 2);
+
+                    double capturableRoll = UnityEngine.Random.value;
+
+                    double prob = 0;
+
+                    string selectedCapturableName = "None";
+
+                    foreach(string key in this._capturableProbabilities.Keys)
+                    {
+                        prob += this._capturableProbabilities[key];
+
+                        if(capturableRoll <= prob)
+                        {
+                            selectedCapturableName = key;
+                            break;
+                        }
+                    }
+
+                    if (!selectedCapturableName.Equals("None"))
+                    {
+                        foreach(GameObject capturablePrefab in CapturablePrefabs)
+                        {
+                            if (capturablePrefab.name.Equals(selectedCapturableName))
+                            {
+                                cellX.GetComponent<RegionBehaviour>().AssignCapturable(capturablePrefab);
+                            }
+                        }
+                    }
+
 
                     IDcounter++;
                
