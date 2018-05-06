@@ -1267,6 +1267,11 @@ MonoBehaviour:
   - {fileID: 2800000, guid: ddf7bf93ed53a82408a539c3322adc90, type: 3}
   - {fileID: 2800000, guid: c7a5fc65adb6d4c4bacb4c77c829ddb4, type: 3}
   Brain: {fileID: 2800000, guid: 31d5cf22dcb196747bea51faf683bebc, type: 3}
+  WinScreens:
+  - {fileID: 2800000, guid: 41c3a31a8d65ea74f9ebf16309bbb656, type: 3}
+  - {fileID: 2800000, guid: fce9bfce59d77b246a8b29ede11a0f91, type: 3}
+  - {fileID: 2800000, guid: d016fc28bcd868c4486501f02506b719, type: 3}
+  - {fileID: 2800000, guid: 6cb18195c3d4cbd4aa2a636e9c615bc3, type: 3}
 --- !u!4 &1335065119
 Transform:
   m_ObjectHideFlags: 0

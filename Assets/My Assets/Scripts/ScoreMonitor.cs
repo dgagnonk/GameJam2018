@@ -7,6 +7,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace GameJam2018
 {
@@ -33,6 +34,7 @@ namespace GameJam2018
         [Header("GUI Stuff")]
         public List<Texture> Portraits = new List<Texture>();
         public Texture Brain;
+        public List<Texture> WinScreens = new List<Texture>();
 
 	    // Use this for initialization
 	    void Start ()
@@ -99,6 +101,14 @@ namespace GameJam2018
 
         private void OnGUI()
         {
+            if (Victory > -1)
+            {
+
+                Debug.Log("Loading scene: " + Victory.ToString() + "GameOver");
+                SceneManager.LoadScene(Victory.ToString() + "GameOver");
+            }
+
+
 
             GUIStyle style = new GUIStyle();
             style.fontSize = 20;
