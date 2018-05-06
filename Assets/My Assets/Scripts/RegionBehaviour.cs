@@ -12,7 +12,7 @@ namespace GameJam2018
 
         public float DominantMindshareAtPercent = 0.51f;
         public int KingOfRegion = -1;
-
+        public float[] CurrentMindshares;
         public int ID;
 
         private ICapturable _capturable;
@@ -22,6 +22,7 @@ namespace GameJam2018
         {
             PeopleInRegion = new List<GameObject>();
             regionSpawner = GameObject.Find("Region Spawner").GetComponent<RegionSpawner>();
+            CurrentMindshares = new float[Constants.PlayerCount];
         }
 
         // Update is called once per frame
@@ -50,6 +51,8 @@ namespace GameJam2018
             {
                 //Debug.Log("Opinion " + i.ToString() + " has " + (opTotals[i] / people.Count).ToString() + "%, total is " + opTotals[i].ToString() + ", grand total is " + people.Count.ToString());
 
+                CurrentMindshares[i] = (opTotals[i] / PeopleInRegion.Count);
+
                 if ((opTotals[i] / PeopleInRegion.Count) >= DominantMindshareAtPercent)
                 {             
                     KingOfRegion = i;
@@ -61,6 +64,12 @@ namespace GameJam2018
                     break;
                 }
             }
+        }
+
+        private void OnTriggerStay(Collider other)
+        {
+            if (other.tag == "Person")
+                CalcMindshare();
         }
 
         private void OnTriggerEnter(Collider other)
