@@ -14,7 +14,7 @@ namespace GameJam2018
     public class RegionMonitor : MonoBehaviour {
 
         // Need this to go through the spawned persons list
-        public GameJam2018Editor.PersonSpawner PersonSpawner;
+        public PersonSpawner PersonSpawner;
 
         // Victory is triggered at this percent. 51% by default.
         public float VictoryTriggeredAtPercent = 0.51f;

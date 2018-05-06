@@ -53,6 +53,9 @@ namespace GameJam2018
         [Tooltip("Reminder that all opinion percentages should add up to 1.")]
         public Opinion[] Opinions;
 
+
+        public List<Opinion> test = new List<Opinion>();
+
         void Start()
         {
 
@@ -78,11 +81,13 @@ namespace GameJam2018
 
         #endregion
 
+
         // All opinions in the array add up to 1, since they are percentages
         // When you add more onto a specific opinion, an equal fraction of the added amount is removed from the other opinions
         // OpinionIndex : The index of the opinions array of which to add "ToAdd"
         public void AddToOpinion(int OpinionIndex, float ToAdd)
         { 
+
             if (ToAdd > 1.0f - this.Opinions[OpinionIndex].Percent) ToAdd = 1.0f - this.Opinions[OpinionIndex].Percent;
             if (ToAdd <= 0.0f) return;
 
@@ -100,6 +105,27 @@ namespace GameJam2018
             }
         }
 
+        //a "dominant" opinion is one that has more than 50% of control 
+        //returns -1 if there isn't a dominant opinion, 0-3 for the dominant opinion (index of the opinion)
+        public int getDominantOpinion()
+        {
+            if(Opinions.Length == 0)
+            {
+                Debug.Log("Opinions array is empty!");
+            }
+            for(int i = 0; i < 4; i++)
+            {
+                if (Opinions[i] == null)
+                {
+                    Debug.Log("Opinion was null!");
+                }
+                if (Opinions[i].Percent > 0.5f)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
     }
 
 }

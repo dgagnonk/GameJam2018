@@ -307,6 +307,7 @@
   <ItemGroup>
     <Compile Include="Assets\My Assets\Prefabs\PersonAnimation.cs" />
     <Compile Include="Assets\My Assets\Scripts\Constants.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Conversation.cs" />
     <Compile Include="Assets\My Assets\Scripts\Gamepad_Data.cs" />
     <Compile Include="Assets\My Assets\Scripts\NPCNavmeshAgent.cs" />
     <Compile Include="Assets\My Assets\Scripts\OpinionStatus.cs" />

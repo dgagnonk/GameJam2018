@@ -7,6 +7,8 @@ TagManager:
   - Person
   - Shout Collider
   - Obstacle
+  - Active Conversation
+  - Conversation Collider
   layers:
   - Default
   - TransparentFX

@@ -21,5 +21,3 @@ namespace GameJam2018
 
     }
 }
-
-

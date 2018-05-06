@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using GameJam2018;
 
-namespace GameJam2018Editor
+namespace GameJam2018
 {
 
     public class PersonSpawner : MonoBehaviour
@@ -53,7 +53,6 @@ namespace GameJam2018Editor
                     for (int j = 0; j < rows; j++)
                     {
                         spawnPerson(new Vector3(xInitialOffset + (i * xOffset), 0, zInitialOffset + (j * zOffset)));
-                        Debug.Log((i * xOffset).ToString() + " " + (j * zOffset).ToString());
                     }
                 }
             }
