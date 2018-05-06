@@ -9,6 +9,7 @@ TagManager:
   - Obstacle
   - Active Conversation
   - Conversation Collider
+  - Region
   layers:
   - Default
   - TransparentFX

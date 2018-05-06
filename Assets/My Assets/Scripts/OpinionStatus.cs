@@ -41,9 +41,9 @@ namespace GameJam2018
         private Color[] _opinionPalette = new Color[4]
         {
             Color.red,
-            Color.blue,
             Color.yellow,
-            Color.magenta
+            Color.blue,
+            Color.green
         };
 
 
