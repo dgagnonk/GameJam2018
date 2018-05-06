@@ -313,7 +313,6 @@
     <Compile Include="Assets\My Assets\Scripts\OpinionStatus.cs" />
     <Compile Include="Assets\My Assets\Scripts\Person.cs" />
     <Compile Include="Assets\My Assets\Scripts\PersonSpawner.cs" />
-    <Compile Include="Assets\My Assets\Scripts\PersonSpawner_Editor.cs" />
     <Compile Include="Assets\My Assets\Scripts\PlayerCharacter.cs" />
     <Compile Include="Assets\My Assets\Scripts\RegionMonitor.cs" />
     <Compile Include="Assets\My Assets\Scripts\ShoutController.cs" />
@@ -321,6 +320,7 @@
     <Compile Include="Assets\My Assets\Scripts\ThirdPersonUserControl.cs" />
     <Compile Include="Assets\My Assets\Scripts\Wander.cs" />
     <Compile Include="Assets\My Assets\XInputDotNet\Examples\XInputTestCS.cs" />
+    <Compile Include="Assets\My Assets\Scripts\SplashScreen.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\My Assets\XInputDotNet\Docs.txt" />
