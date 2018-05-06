@@ -30,11 +30,11 @@ public class Conversation : MonoBehaviour
         Collider[] talkingPeople = Physics.OverlapSphere(gameObject.transform.position, gameObject.transform.localScale.x / 2);
         foreach( Collider collider in talkingPeople)
         {
-            Person person = collider.GetComponentInParent<Person>();
+            GameJam2018.Person person = collider.GetComponentInParent<GameJam2018.Person>();
             if(person != null)
             {
                 person.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 1;
-                person.state = NPCState.WANDERING;
+                person.state = GameJam2018.NPCState.WANDERING;
             }
         }
 

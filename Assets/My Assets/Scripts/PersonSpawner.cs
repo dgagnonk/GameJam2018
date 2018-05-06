@@ -1,19 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GameJam2018;
 
 namespace GameJam2018
 {
 
     public class PersonSpawner : MonoBehaviour
     {
-        public GameObject personPrefab;
+        public List<GameObject> personPrefabs;
         public int numPeople = 10;
         public List<GameObject> people;
         public bool randomSpawn; //if true, NPCs will spawn randomly within boundaries. If false, NPCs will spawn on a grid.
         public int rows = 1;        //Number of rows/columns to spawn NPCs in
         public int columns = 1;
         public Transform peopleParent;
+        public Material NPCMaterial;
 
         public SpawnBoundaries boundaries;
 
@@ -52,16 +54,18 @@ namespace GameJam2018
                     for (int j = 0; j < rows; j++)
                     {
                         spawnPerson(new Vector3(xInitialOffset + (i * xOffset), 0, zInitialOffset + (j * zOffset)));
-                        Debug.Log((i * xOffset).ToString() + " " + (j * zOffset).ToString());
                     }
                 }
             }
         }
 
         //Spawn an NPC at the provided position.
-        void spawnPerson(Vector3 position)
+        GameObject spawnPerson(Vector3 position)
         {
-            people.Add(Instantiate(personPrefab, position, Quaternion.identity, peopleParent));
+            int randomIndex = Random.Range(0, personPrefabs.Count - 1);
+            GameObject newPerson = Instantiate(personPrefabs[randomIndex], position, Quaternion.identity, peopleParent);
+            people.Add(newPerson);
+            return newPerson;
         }
     }
 

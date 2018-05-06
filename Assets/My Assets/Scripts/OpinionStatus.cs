@@ -17,6 +17,14 @@ namespace GameJam2018
     [System.Serializable]
     public class Opinion
     {
+        public static Color[] OpinionPalette = new Color[4]
+        {
+            Color.red,
+            Color.yellow,
+            Color.blue,
+            Color.green
+        };
+
         public float Percent;
         public Color Colour;
 
@@ -45,6 +53,7 @@ namespace GameJam2018
         [Tooltip("Reminder that all opinion percentages should add up to 1.")]
         public Opinion[] Opinions;
 
+
         public List<Opinion> test = new List<Opinion>();
 
         void Start()
@@ -53,43 +62,32 @@ namespace GameJam2018
             this.PlayerCount = Constants.PlayerCount;
             this.Opinions = new Opinion[PlayerCount];
 
+            for (int i = 0; i < this.PlayerCount; i++)
+            {
+                this.Opinions[i] = new Opinion(1.0f / this.PlayerCount, Opinion.OpinionPalette[i]);
+            }
+
             // Uncomment this part to mess around with the system for testing
-            Test();
+            //Test();
 
         }
 
+        #region For Testing (Inconsequential)
 
-        // For testing purposes
         void Test()
         {
-            try
-            {
-                this.Opinions[0] = new Opinion(0.25f, Color.red);
-                this.Opinions[1] = new Opinion(0.25f, Color.white);
-                this.Opinions[2] = new Opinion(0.25f, Color.black);
-                this.Opinions[3] = new Opinion(0.25f, Color.yellow);
-            }
-            catch
-            { /* don't fuggin care */ }
-
-
-            AddToOpinion(Mathf.FloorToInt(Random.Range(0,4)), 0.26f);
-
-            foreach (Opinion o in this.Opinions)
-                Debug.Log(o.Percent.ToString());
-
-            float sum = 0.0f;
-            foreach (Opinion o in this.Opinions)
-                sum += o.Percent;
-
-            Debug.Log(sum.ToString()); // We always want all opinion percentages to add up to 1
+            AddToOpinion(0, 0.25f);
         }
+
+        #endregion
+
 
         // All opinions in the array add up to 1, since they are percentages
         // When you add more onto a specific opinion, an equal fraction of the added amount is removed from the other opinions
         // OpinionIndex : The index of the opinions array of which to add "ToAdd"
         public void AddToOpinion(int OpinionIndex, float ToAdd)
         {
+
             if (ToAdd > 1.0f - this.Opinions[OpinionIndex].Percent) ToAdd = 1.0f - this.Opinions[OpinionIndex].Percent;
             if (ToAdd <= 0.0f) return;
 
@@ -107,15 +105,29 @@ namespace GameJam2018
             }
         }
 
+        public Opinion GetHighestOpinion()
+        {
+            List<Opinion> sortedOpinions = this.Opinions.OrderByDescending(x => x.Percent).ToList();
+
+            if (sortedOpinions.Count > 1 && sortedOpinions[0].Percent == sortedOpinions[1].Percent)
+            {
+                return null;
+            }
+            else
+            {
+                return sortedOpinions.First();
+            }
+        }
+
         //a "dominant" opinion is one that has more than 50% of control 
         //returns -1 if there isn't a dominant opinion, 0-3 for the dominant opinion (index of the opinion)
         public int getDominantOpinion()
         {
-            if(Opinions.Length == 0)
+            if (Opinions.Length == 0)
             {
                 Debug.Log("Opinions array is empty!");
             }
-            for(int i = 0; i < 4; i++)
+            for (int i = 0; i < 4; i++)
             {
                 if (Opinions[i] == null)
                 {
@@ -128,8 +140,6 @@ namespace GameJam2018
             }
             return -1;
         }
-
     }
 
 }
-
