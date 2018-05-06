@@ -64,6 +64,7 @@
     <Compile Include="Assets\My Assets\Scripts\BillboardInfluenceSphere.cs" />
     <Compile Include="Assets\My Assets\Scripts\Constants.cs" />
     <Compile Include="Assets\My Assets\Scripts\Conversation.cs" />
+    <Compile Include="Assets\My Assets\Scripts\GameOver.cs" />
     <Compile Include="Assets\My Assets\Scripts\Gamepad_Data.cs" />
     <Compile Include="Assets\My Assets\Scripts\ICapturable.cs" />
     <Compile Include="Assets\My Assets\Scripts\NPCNavmeshAgent.cs" />
