@@ -17,6 +17,14 @@ namespace GameJam2018
     [System.Serializable]
     public class Opinion
     {
+        public static Color[] OpinionPalette = new Color[4]
+        {
+            Color.yellow,
+            Color.blue,
+            Color.red,
+            new Color(255,0,230) // pink
+        };
+
         public float Percent;
         public Color Colour;
 
@@ -38,15 +46,6 @@ namespace GameJam2018
 
     public class OpinionStatus : MonoBehaviour
     {
-        private Color[] _opinionPalette = new Color[4]
-        {
-            Color.red,
-            Color.yellow,
-            Color.blue,
-            Color.green
-        };
-
-
         private int PlayerCount;
 
         [Header("Opinions")]
@@ -64,7 +63,7 @@ namespace GameJam2018
 
             for(int i = 0; i < this.PlayerCount; i++)
             {
-                this.Opinions[i] = new Opinion(1.0f / this.PlayerCount, this._opinionPalette[i]);
+                this.Opinions[i] = new Opinion(1.0f / this.PlayerCount, Opinion.OpinionPalette[i]);
             }
 
             // Uncomment this part to mess around with the system for testing

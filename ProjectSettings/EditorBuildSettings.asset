@@ -9,6 +9,21 @@ EditorBuildSettings:
     path: Assets/My Assets/Scenes/SplashScreen.unity
     guid: 305a7b67e783d8346af8412255a1557f
   - enabled: 1
+    path: Assets/My Assets/Scenes/Tutorial.unity
+    guid: 95e04fff09875d2489e38c0e434d39e7
+  - enabled: 1
     path: Assets/My Assets/Scenes/PlayerWithNPCs.unity
     guid: 77f45f4d4535e924ba710d56fd1f59bd
+  - enabled: 1
+    path: Assets/My Assets/Scenes/0GameOver.unity
+    guid: f689df2e283c37e4d81b5bb430e29b14
+  - enabled: 1
+    path: Assets/My Assets/Scenes/1GameOver.unity
+    guid: cc7989895b4a543439e994817c208ad3
+  - enabled: 1
+    path: Assets/My Assets/Scenes/2GameOver.unity
+    guid: 9ac7986b06b7728469e663277a0e2b5a
+  - enabled: 1
+    path: Assets/My Assets/Scenes/3GameOver.unity
+    guid: 465f19a0fc097e34d82408851a8c142a
   m_configObjects: {}

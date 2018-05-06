@@ -288,11 +288,11 @@
     <Reference Include="Boo.Lang">
       <HintPath>Library\UnityAssemblies\Boo.Lang.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>Library\ScriptAssemblies\UnityEditor.StandardEvents.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.PackageManagerUI.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.StandardEvents">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="XInputDotNetPure">
       <HintPath>Assets\My Assets\XInputDotNet\Plugins\XInputDotNetPure.dll</HintPath>
@@ -306,6 +306,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\My Assets\Prefabs\PersonAnimation.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Billboard.cs" />
+    <Compile Include="Assets\My Assets\Scripts\BillboardInfluenceSphere.cs" />
+    <Compile Include="Assets\My Assets\Scripts\ICapturable.cs" />
     <Compile Include="Assets\My Assets\Scripts\Constants.cs" />
     <Compile Include="Assets\My Assets\Scripts\Conversation.cs" />
     <Compile Include="Assets\My Assets\Scripts\Gamepad_Data.cs" />
@@ -315,7 +318,9 @@
     <Compile Include="Assets\My Assets\Scripts\Person.cs" />
     <Compile Include="Assets\My Assets\Scripts\PersonSpawner.cs" />
     <Compile Include="Assets\My Assets\Scripts\PlayerCharacter.cs" />
-    <Compile Include="Assets\My Assets\Scripts\RegionMonitor.cs" />
+    <Compile Include="Assets\My Assets\Scripts\RegionBehaviour.cs" />
+    <Compile Include="Assets\My Assets\Scripts\RegionSpawner.cs" />
+    <Compile Include="Assets\My Assets\Scripts\ScoreMonitor.cs" />
     <Compile Include="Assets\My Assets\Scripts\ShoutController.cs" />
     <Compile Include="Assets\My Assets\Scripts\SpawnBoundaries.cs" />
     <Compile Include="Assets\My Assets\Scripts\ThirdPersonUserControl.cs" />

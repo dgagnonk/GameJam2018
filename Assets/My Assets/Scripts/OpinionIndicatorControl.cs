@@ -22,7 +22,7 @@ namespace GameJam2018
         // Update is called once per frame
         void Update()
         {
-            this.GetComponent<Transform>().rotation = Quaternion.Euler(-35.802f, 54.667f, -9.580001f);
+            this.GetComponent<Transform>().rotation = Quaternion.Euler(-35.802f, 54.667f, 36.887f);
 
             Opinion highestOpinion = this._opinion.GetHighestOpinion();
 

@@ -12,14 +12,17 @@ namespace GameJam2018
 
         public float DominantMindshareAtPercent = 0.51f;
         public int KingOfRegion = -1;
-
+        public float[] CurrentMindshares;
         public int ID;
+
+        private ICapturable _capturable;
 
         // Use this for initialization
         void Start()
         {
             PeopleInRegion = new List<GameObject>();
             regionSpawner = GameObject.Find("Region Spawner").GetComponent<RegionSpawner>();
+            CurrentMindshares = new float[Constants.PlayerCount];
         }
 
         // Update is called once per frame
@@ -37,7 +40,7 @@ namespace GameJam2018
             foreach (GameObject gameObj in PeopleInRegion)
             {
                 OpinionStatus opStat = gameObj.GetComponent<OpinionStatus>();
-                for (int i = 0; i < Constants.PlayerCount; i++)
+                for (int i = 0; i < opStat.Opinions.Length; i++)
                 {
                     opTotals[i] += opStat.Opinions[i].Percent;
                     //grandTotal += opTotals[i];
@@ -48,13 +51,25 @@ namespace GameJam2018
             {
                 //Debug.Log("Opinion " + i.ToString() + " has " + (opTotals[i] / people.Count).ToString() + "%, total is " + opTotals[i].ToString() + ", grand total is " + people.Count.ToString());
 
+                CurrentMindshares[i] = (opTotals[i] / PeopleInRegion.Count);
+
                 if ((opTotals[i] / PeopleInRegion.Count) >= DominantMindshareAtPercent)
                 {             
                     KingOfRegion = i;
+                    if(this._capturable != null)
+                    {
+                        this._capturable.SetOwner(i);
+                    }          
                     this.gameObject.GetComponent<MeshRenderer>().material = regionSpawner.Materials[i];
                     break;
                 }
             }
+        }
+
+        private void OnTriggerStay(Collider other)
+        {
+            //if (other.tag == "Person")
+                //CalcMindshare();
         }
 
         private void OnTriggerEnter(Collider other)
@@ -71,6 +86,14 @@ namespace GameJam2018
             {
                 PeopleInRegion.Remove(other.gameObject);
             }
+        }
+
+        public void AssignCapturable(GameObject capturable)
+        {
+            if(capturable == null) { this._capturable = null; }
+
+            GameObject capturableObject = GameObject.Instantiate(capturable, this.transform, false);
+            this._capturable = capturableObject.GetComponent<ICapturable>();
         }
     }
 }
