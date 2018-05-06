@@ -29,7 +29,7 @@ public class GameOver : MonoBehaviour {
 
         if(GUI.Button(new Rect(0, 0, 250, 50), "Restart"))
         {
-            SceneManager.LoadScene("PlayerWithNPCs");
+            SceneManager.LoadScene("SplashScreen");
         }
         
     }
