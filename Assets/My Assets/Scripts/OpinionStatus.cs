@@ -40,10 +40,10 @@ namespace GameJam2018
     {
         private Color[] _opinionPalette = new Color[4]
         {
-            Color.red,
             Color.yellow,
             Color.blue,
-            Color.green
+            Color.red,
+            new Color(255,0,230) // pink
         };
 
 
