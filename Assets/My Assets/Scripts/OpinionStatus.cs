@@ -19,10 +19,10 @@ namespace GameJam2018
     {
         public static Color[] OpinionPalette = new Color[4]
         {
-            Color.red,
             Color.yellow,
             Color.blue,
-            Color.green
+            Color.red,
+            new Color(255,0,230) // pink
         };
 
         public float Percent;
@@ -46,7 +46,6 @@ namespace GameJam2018
 
     public class OpinionStatus : MonoBehaviour
     {
-        
         private int PlayerCount;
 
         [Header("Opinions")]
