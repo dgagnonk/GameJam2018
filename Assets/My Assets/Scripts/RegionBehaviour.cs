@@ -68,8 +68,8 @@ namespace GameJam2018
 
         private void OnTriggerStay(Collider other)
         {
-            if (other.tag == "Person")
-                CalcMindshare();
+            //if (other.tag == "Person")
+                //CalcMindshare();
         }
 
         private void OnTriggerEnter(Collider other)
