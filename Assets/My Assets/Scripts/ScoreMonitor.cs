@@ -18,6 +18,8 @@ namespace GameJam2018
 
         // To write percentages and other data
         public Canvas GUICanvas;
+        private float canvasWidth;
+        private float canvasHeight;
 
         // Victory is triggered at this percent. 51% by default.
         public float VictoryTriggeredAtPercent = 0.51f;
@@ -27,6 +29,10 @@ namespace GameJam2018
         private int Victory = -1; // If victory > -1, then we know a player won
 
         public float[] CurrentMindshares;
+
+        [Header("GUI Stuff")]
+        public List<Texture> Portraits = new List<Texture>();
+        public Texture Brain;
 
 	    // Use this for initialization
 	    void Start ()
@@ -76,6 +82,9 @@ namespace GameJam2018
         void Update()
         {
 
+            canvasWidth = GUICanvas.GetComponent<RectTransform>().rect.width;
+            canvasHeight = GUICanvas.GetComponent<RectTransform>().rect.height;
+
             if (Victory > -1)
             {
                 //----------------------------------------
@@ -95,25 +104,77 @@ namespace GameJam2018
             style.fontSize = 20;
             style.normal.textColor = Color.white;
 
-            string player0percent = Mathf.RoundToInt(CurrentMindshares[0] * 100).ToString() + "%"; 
-            GUI.Label(new Rect(200, 15, 100, 100), player0percent, style);
 
+
+
+            // ------------------ PLAYER 0 ------------------ 
+            string player0percent = Mathf.RoundToInt(CurrentMindshares[0] * 100).ToString() + "%"; 
+            GUI.Label(new Rect(205, 20, 100, 100), player0percent, style);
+
+            GUIContent portrait0 = new GUIContent();
+            portrait0.image = Portraits[0];
+            GUI.Label(new Rect(50, 10, 100, 100), portrait0);
+
+            GUIContent brain0 = new GUIContent();
+            brain0.image = Brain;
+            GUI.Label(new Rect(140, 0, 60, 60), brain0);
+
+
+            // ------------------ PLAYER 1 ------------------ 
             string player1percent = Mathf.RoundToInt(CurrentMindshares[1] * 100).ToString() + "%";
-            GUI.Label(new Rect(965, 15, 100, 100), player1percent, style);
+            GUI.Label(new Rect(canvasWidth - 250, 20, 100, 100), player1percent, style);
+
+            GUIContent portrait1 = new GUIContent();
+            portrait1.image = Portraits[1];
+            GUI.Label(new Rect(canvasWidth - 150, 10, 100, 100), portrait1);
+
+            GUIContent brain1 = new GUIContent();
+            brain1.image = Brain;
+            GUI.Label(new Rect(canvasWidth - 200, 0, 60, 60), brain1);
+
+
+
 
             if (Constants.PlayerCount == 3)
             {
+                // ------------------ PLAYER 2 ------------------ 
                 string player2percent = (CurrentMindshares[2] * 100).ToString() + "%";
-                GUI.Label(new Rect(200, 550, 100, 100), player2percent, style);
+                GUI.Label(new Rect(205, canvasHeight - 110, 100, 100), player2percent, style);
+
+                GUIContent portrait2 = new GUIContent();
+                portrait2.image = Portraits[2];
+                GUI.Label(new Rect(50, canvasHeight - 120, 100, 100), portrait2);
+
+                GUIContent brain2 = new GUIContent();
+                brain2.image = Brain;
+                GUI.Label(new Rect(140, canvasHeight - 130, 60, 60), brain2);
+
             }
             else if (Constants.PlayerCount == 4)
             {
-                string player2percent = Mathf.RoundToInt(CurrentMindshares[2] * 100).ToString() + "%";
-                GUI.Label(new Rect(200, 555, 100, 100), player2percent, style);
+                // ------------------ PLAYER 2 ------------------ 
+                string player2percent = (CurrentMindshares[2] * 100).ToString() + "%";
+                GUI.Label(new Rect(205, canvasHeight - 110, 100, 100), player2percent, style);
 
+                GUIContent portrait2 = new GUIContent();
+                portrait2.image = Portraits[2];
+                GUI.Label(new Rect(50, canvasHeight - 120, 100, 100), portrait2);
 
+                GUIContent brain2 = new GUIContent();
+                brain2.image = Brain;
+                GUI.Label(new Rect(140, canvasHeight - 130, 60, 60), brain2);
+
+                // ------------------ PLAYER 3 ------------------ 
                 string player3percent = Mathf.RoundToInt(CurrentMindshares[3] * 100).ToString() + "%";
-                GUI.Label(new Rect(965, 555, 100, 100), player3percent, style);
+                GUI.Label(new Rect(canvasWidth - 250, canvasHeight - 110, 100, 100), player3percent, style);
+
+                GUIContent portrait3 = new GUIContent();
+                portrait3.image = Portraits[3];
+                GUI.Label(new Rect(canvasWidth - 150, canvasHeight - 120, 100, 100), portrait3);
+
+                GUIContent brain3 = new GUIContent();
+                brain3.image = Brain;
+                GUI.Label(new Rect(canvasWidth - 200, canvasHeight - 130, 60, 60), brain3);
             }
 
             
