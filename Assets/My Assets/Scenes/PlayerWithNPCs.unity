@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -473,6 +473,53 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d19f404943bae5244bcec6222fdb9f0f, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &425802649
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4927444755847678, guid: eebd2f8ad085cb84fa58baef9313d3da, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4927444755847678, guid: eebd2f8ad085cb84fa58baef9313d3da, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4927444755847678, guid: eebd2f8ad085cb84fa58baef9313d3da, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4927444755847678, guid: eebd2f8ad085cb84fa58baef9313d3da, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4927444755847678, guid: eebd2f8ad085cb84fa58baef9313d3da, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4927444755847678, guid: eebd2f8ad085cb84fa58baef9313d3da, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4927444755847678, guid: eebd2f8ad085cb84fa58baef9313d3da, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4927444755847678, guid: eebd2f8ad085cb84fa58baef9313d3da, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114337437365998250, guid: eebd2f8ad085cb84fa58baef9313d3da,
+        type: 2}
+      propertyPath: regionSpawner
+      value: 
+      objectReference: {fileID: 1682756565}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: eebd2f8ad085cb84fa58baef9313d3da, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &626025329
 GameObject:
@@ -979,7 +1026,7 @@ MonoBehaviour:
   Materials:
   - {fileID: 2100000, guid: 930cde84b81931543acd07fb54cdce0a, type: 2}
   - {fileID: 2100000, guid: 52976f4086c6d9c478f3ca45e3bf98b7, type: 2}
-  - {fileID: 2100000, guid: 545db83c4d7f6544cbb9417d07a89179, type: 2}
+  - {fileID: 2100000, guid: 07e6937a055690945b11b03bf6f0a5b3, type: 2}
   - {fileID: 2100000, guid: e1934a7ddfdb3984191af41fac4a7241, type: 2}
   RegionSize: 2.5
   Dimension: 4

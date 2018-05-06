@@ -26,6 +26,8 @@ namespace GameJam2018
             // The point on which to start the grid spawning
             Vector3 spawnpt = new Vector3(-10f + RegionSize, 0.0f, -10f + RegionSize);
 
+            int IDcounter = 0;
+
             for (int i = 0; i < Dimension; i++)
             {
                 float origX = spawnpt.x;
@@ -34,25 +36,32 @@ namespace GameJam2018
                 {
                     GameObject cellX = Instantiate(RegionPrefab, this.transform, true);
 
-                    cellX.GetComponent<MeshRenderer>().material = Materials[(int)Random.Range(0, 4)];
+                    cellX.GetComponent<RegionBehaviour>().ID = IDcounter;
+
+                    //cellX.GetComponent<MeshRenderer>().material = Materials[(int)Random.Range(0, 4)];
 
                     cellX.transform.localScale = new Vector3(RegionSize * 2, 0.01f, RegionSize * 2);
                     cellX.transform.position = spawnpt;
 
-                    spawnpt.x += (RegionSize * 2);             
-                
-                
+                    spawnpt.x += (RegionSize * 2);
+
+                    IDcounter++;
+               
                 }
 
                 spawnpt.x = origX;
 
                 GameObject cellZ = Instantiate(RegionPrefab, this.transform, true);
 
-                cellZ.GetComponent<MeshRenderer>().material = Materials[(int)Random.Range(0, 4)];
+                cellZ.GetComponent<RegionBehaviour>().ID = IDcounter;
+
+                //cellZ.GetComponent<MeshRenderer>().material = Materials[(int)Random.Range(0, 4)];
                 cellZ.transform.localScale = new Vector3(RegionSize * 2, 0.01f, RegionSize * 2);
                 cellZ.transform.position = spawnpt;
 
                 spawnpt.z += (RegionSize * 2);
+
+                IDcounter++;
             }
 
 	    }

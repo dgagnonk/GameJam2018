@@ -73,7 +73,7 @@ namespace GameJam2018
                 //----------------------------------------
                 // END GAME LOGIC HERE
                 //---------------------------------------- 
-                Debug.Log("A player has already won, why do we keep going?");
+                Debug.Log("Player " + Victory.ToString() + " has already won, why do we keep going?");
             }
 
             VictoryMonitor();
