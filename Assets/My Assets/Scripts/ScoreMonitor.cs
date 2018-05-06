@@ -11,7 +11,7 @@ using UnityEngine;
 namespace GameJam2018
 {
 
-    public class RegionMonitor : MonoBehaviour {
+    public class ScoreMonitor : MonoBehaviour {
 
         // Need this to go through the spawned persons list
         public PersonSpawner PersonSpawner;
